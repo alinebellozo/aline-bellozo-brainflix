@@ -1,24 +1,37 @@
-import './App.css';
+import "./App.scss";
 
-function App() {
+// built-in imports
+import { useState } from "react";
+// import getCharacters, { getCharacterDetails } from "./utils/utils";
+
+// components
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+
+export default function App() {
+  const [charId, setCharId] = useState(48);
+  const [characters, setCharacters] = useState(getCharacters(charId));
+  const [characterDetails, setCharacterDetails] = useState(
+    getCharacterDetails(charId)
+  );
+
+  const handleClick = (event, characterId) => {
+    event.preventDefault();
+    setCharId(characterId);
+    setCharacters(getCharacters(characterId));
+    setCharacterDetails(getCharacterDetails(characterId));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <section className="app__container">
+        <section className="app__container-left">
+          <CharacterDetails character={characterDetails} />
+          <Relatives relatives={characterDetails.relatives} />
+        </section>
+        <SideBar characters={characters} onCharacterClick={handleClick} />
+      </section>
     </div>
   );
 }
-
-export default App;
