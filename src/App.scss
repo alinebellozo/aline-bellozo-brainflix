@@ -1,18 +1,18 @@
-// html,
-// body {
-//   margin: 0;
-//   padding: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   box-sizing: border-box;
-//   font-family: "Anevir";
-//   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍔</text></svg>") 16 0,
-//     auto;
-//   overflow-x: hidden;
-// }
+@use "./components/styles/partials/breakpoints" as *;
+@use "./components/styles/partials/colors" as *;
 
-// *,
-// *::before,
-// *::after {
-//   box-sizing: inherit;
-// }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Anevir";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
