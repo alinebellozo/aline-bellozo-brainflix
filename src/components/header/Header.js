@@ -1,5 +1,5 @@
 import "./header.scss";
-import Logo from "../../assets/logo/Brainflix-logo.svg";
+import Logo from "../../assets/logo/BrainFlix-logo.svg";
 import Image from "../../assets/images/Mohan-muruge.jpg";
 
 export default function Header() {

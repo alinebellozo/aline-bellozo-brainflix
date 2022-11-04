@@ -1,36 +1,27 @@
 import "./App.scss";
+import Header from "./components/header/Header";
+import { useState } from "react";
 
-// built-in imports
-//import { useState } from "react";
-// import getCharacters, { getCharacterDetails } from "./utils/utils";
+// named imports
+import getVideoDetails, { getVideos } from "./components/utils/Utils.js";
 
 // components
-import Header from "./components/header/Header";
 
-// export default function App() {
-//   // const [charId, setCharId] = useState(48);
-//   // const [characters, setCharacters] = useState(getCharacters(charId));
-//   // const [characterDetails, setCharacterDetails] = useState(
-//   //   getCharacterDetails(charId)
-//   // );
 
-//   // const handleClick = (event, characterId) => {
-//   //   event.preventDefault();
-//   //   setCharId(characterId);
-//   //   setCharacters(getCharacters(characterId));
-//   //   setCharacterDetails(getCharacterDetails(characterId));
-//   // };
-
-//   // return (
-//   //   <div className="app">
-//   //     <Header />
-//   //     <section className="app__container">
-//   //       <section className="app__container-left">
-//   //         <CharacterDetails character={characterDetails} />
-//   //         <Relatives relatives={characterDetails.relatives} />
-//   //       </section>
-//   //       <SideBar characters={characters} onCharacterClick={handleClick} />
-//   //     </section>
-//   //   </div>
-//   // );
-// }
+ function App() {
+    // Store the ID inside a state to use as the default
+    const [vdeoId, setVdeoId] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
+    const [videos, setVideos] = useState(getVideos(vdeoId));
+    const [videoDetails, setVideoDetails] = useState(
+    getVideoDetails(vdeoId));
+    
+     
+         
+    return (
+        <div className="app">
+            <Header />
+        </div>
+    );
+ }
+console.log("Hello world");
+export default App;
