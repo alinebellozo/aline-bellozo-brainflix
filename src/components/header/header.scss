@@ -1,2 +1,55 @@
-// @use "./components/styles/partials/breakpoints" as *;
-// @use "./components/styles/partials/colors" as *;
+@use "../styles/partials/fonts";
+@use "../styles/partials/breakpoints" as *;
+@use "../styles/partials/colors" as *;
+
+.header {
+    display: flex;
+    
+    &__logo-container {
+        background-color: $Primary-background-CTA-text;
+    }
+
+    &__logo {
+        max-height: 1.5625rem;
+        max-width: 7.5rem;
+    }
+
+    // &__logo-image {
+
+    // }
+
+    // &__nav-container {
+
+    // }
+
+    // &__nav-search-field-avatar {
+
+    // }
+
+    // &__search-field {
+
+    // }
+
+    &__avatar-container {
+        border-radius: 50%;
+        max-width: 2.25rem;
+        max-height: 2.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        position: relative;
+        overflow: hidden;
+        top: 3.25rem;
+        left: 1rem;
+    }
+
+    &__avatar {
+        display: inline;
+        margin: 0 auto;
+        height: 100%;
+        width: auto;
+    }
+
+    // &__button {
+
+    // }
+}
