@@ -25,7 +25,7 @@ export default function Header() {
                 </div>
             </div>
             
-            <button className="header__button" type="text">UPLOAD</button>
+            <button className="header__button" type="text">Upload</button>
         </nav>
     </header>
   );
