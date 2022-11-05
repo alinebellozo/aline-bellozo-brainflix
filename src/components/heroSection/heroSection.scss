@@ -1,0 +1,30 @@
+@use "../styles/partials/fonts";
+@use "../styles/partials/breakpoints" as *;
+@use "../styles/partials/colors" as *;
+
+.hero {
+
+    // &__video-container {
+             
+    // }
+
+    &__video {
+        width: 100%;
+        height: auto;
+        padding: 0 1rem;
+        background-color: $Secondary-video-player-components;
+        aspect-ratio: 16/9;
+    }
+
+    // &__video-details-container {
+
+    // }
+
+    // &__video-title {
+
+    // }
+
+    // &__video-details {
+
+    // }
+}

@@ -3,10 +3,10 @@
 @use "../styles/partials/colors" as *;
 
 .header {
-    display: flex;
     
     &__logo-container {
         background-color: $Primary-background-CTA-text;
+        margin: auto;
     }
 
     &__logo {
@@ -15,20 +15,24 @@
     }
 
     // &__logo-image {
-
+        
     // }
 
-    // &__nav-container {
+    &__nav-container {
+        display: flex;
+        flex-direction: column;
+    }
 
-    // }
+    &__nav-search-field-avatar {
+        display: flex;
+        flex-direction: row;
+    }
 
-    // &__nav-search-field-avatar {
-
-    // }
-
-    // &__search-field {
-
-    // }
+    &__search-field {
+        background-image: url(../../assets/icons/search.svg);   
+        background-repeat: no-repeat;
+        
+    }
 
     &__avatar-container {
         border-radius: 50%;
@@ -38,8 +42,8 @@
         height: 2.25rem;
         position: relative;
         overflow: hidden;
-        top: 3.25rem;
-        left: 1rem;
+        top: -1.75rem;
+        left: 9.3rem;
     }
 
     &__avatar {
@@ -49,7 +53,12 @@
         width: auto;
     }
 
-    // &__button {
-
-    // }
+    &__button {
+        text-transform: uppercase;
+        border-radius: .25rem;
+        border-style: hidden;
+        color: $Primary-background-CTA-text;
+        background-color: $Primary-CTA-active;
+        width: 100%;
+    }
 }

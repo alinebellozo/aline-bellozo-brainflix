@@ -1,11 +1,13 @@
 import "./heroSection.scss";
 
-export default function HeroSection() {
+export default function HeroSection(props) {
+
+    const heroVideo = props.image;
 
     return (
         <section className="hero">
             <section className="hero__video-container">
-                <video src="" poster="https://i.imgur.com/l2Xfgpl.jpg" className="hero__video"/>
+                <video src="" poster={heroVideo} className="hero__video" controls/>
                 <div className="hero__video-details-container">
                     <h1 className="hero__video-title"></h1>
                     <div className="hero__video-details">

@@ -2,12 +2,10 @@ import "./App.scss";
 import Header from "./components/header/Header";
 import HeroSection from "./components/heroSection/HeroSection";
 import Comments from "./components/comments/Comments";
-
-// import NextVideos from "./components/nextVideos/NextVideos";
+import NextVideos from "./components/nextVideos/NextVideos";
 
 import { useState } from "react";
 
-// named imports
 import getVideoDetails, { getVideos } from "./components/utils/Utils.js";
 
 export default function App() {
@@ -17,18 +15,18 @@ export default function App() {
     const [videoDetails, setVideoDetails] = useState(
     getVideoDetails(vdeoId));
     
-    // const handleClick = (clickEvnt, vdeoIdClickedOn) => {
-    //     setVdeoId(vdeoIdClickedOn);
-    //     setVideos(getVideos(vdeoIdClickedOn));
-    //     setVideoDetails(getVideoDetails(vdeoIdClickedOn));
-    // };
+    const handleClick = (clickEvnt, vdeoIdClickedOn) => {
+        setVdeoId(vdeoIdClickedOn);
+        setVideos(getVideos(vdeoIdClickedOn));
+        setVideoDetails(getVideoDetails(vdeoIdClickedOn));
+    };
 
     return (
         <div className="app">
             <Header />
             <HeroSection />
             <Comments comments={videoDetails.comments} />
-            
+            <NextVideos videos={videos} onClick={handleClick} />
         </div>
     );
 }

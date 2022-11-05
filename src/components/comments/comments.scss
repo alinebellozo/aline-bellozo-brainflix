@@ -1,0 +1,72 @@
+@use "../styles/partials/fonts";
+@use "../styles/partials/breakpoints" as *;
+@use "../styles/partials/colors" as *;
+
+.comments {
+
+    // &__number {
+
+    // }
+
+    // &__join {
+
+    // }
+
+    // &__input-container {
+
+    // }
+
+    &__avatar-container {
+        border-radius: 50%;
+        max-width: 6.25rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        position: relative;
+        overflow: hidden;
+        top: 3.25rem;
+        left: 1rem;
+    }
+
+    &__avatar-image {
+        display: inline;
+        margin: 0 auto;
+        height: 100%;
+        width: auto;
+    }
+
+    // &__input-field {
+
+    // }
+
+    // &__button {
+
+    // }
+
+    // &__container {
+
+    // }
+
+    // &__avatar {
+
+    // }
+
+    // &__details {
+
+    // }
+
+    // &__name-date {
+
+    // }
+
+    // &__name {
+
+    // }
+
+    // &__date {
+
+    // }
+
+    // &__text {
+
+    // }
+}
