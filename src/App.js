@@ -1,6 +1,7 @@
 import "./App.scss";
 import Header from "./components/header/Header";
 import HeroSection from "./components/heroSection/HeroSection";
+import Comments from "./components/comments/Comments";
 
 // import NextVideos from "./components/nextVideos/NextVideos";
 
@@ -26,6 +27,8 @@ export default function App() {
         <div className="app">
             <Header />
             <HeroSection />
+            <Comments comments={videoDetails.comments} />
+            
         </div>
     );
 }

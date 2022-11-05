@@ -1,6 +1,7 @@
 import "./header.scss";
 import Logo from "../../assets/logo/BrainFlix-logo.svg";
 import Image from "../../assets/images/Mohan-muruge.jpg";
+import UploadButton from "../../assets/icons/upload.svg";
 
 export default function Header() {
   return (
@@ -25,7 +26,10 @@ export default function Header() {
                 </div>
             </div>
             
-            <button className="header__button" type="text">Upload</button>
+              <button className="header__button" type="text">
+                  <img className="" src={UploadButton}></img>
+                  Upload
+              </button>
         </nav>
     </header>
   );
