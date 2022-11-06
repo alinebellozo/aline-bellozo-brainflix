@@ -24,7 +24,7 @@ export default function App() {
     return (
         <div className="app">
             <Header />
-            <HeroSection />
+            <HeroSection videoDetails={videoDetails} />
             <Comments comments={videoDetails.comments} />
             <NextVideos videos={videos} onClick={handleClick} />
         </div>

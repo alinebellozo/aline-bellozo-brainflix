@@ -2,8 +2,6 @@ import "./header.scss";
 import Logo from "../../assets/logo/BrainFlix-logo.svg";
 import Image from "../../assets/images/Mohan-muruge.jpg";
 import UploadButton from "../../assets/icons/upload.svg";
-// import SearchField from "../../assets/icons/search.svg";
-
 
 export default function Header() {
   return (
@@ -32,6 +30,12 @@ export default function Header() {
                   <img className="header__button-icon" src={UploadButton}></img>
                   Upload
               </button>
+               <div className="header__avatar-container-second">
+                    <img className="header__avatar-second"
+                        src={Image}
+                        alt="Left side of a man's face">
+                    </img>
+                </div>
         </nav>
     </header>
   );

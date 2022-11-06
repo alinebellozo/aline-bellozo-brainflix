@@ -10,7 +10,7 @@ export default function Comments({comments}) {
                 <div className="comments__avatar-container">
                     <img src={Image} alt="Left side of a man's face" className="comments__avatar-image"/>
                 </div>
-                <input className="comments__input-field" id="input-field" type="text" placeholder="Add a new comment"></input>
+                <textarea className="comments__input-field" id="input-field" type="text" placeholder="Add a new comment"></textarea>
                 <button className="comments__button" type="submit">Comment</button>
             </div>
                
@@ -20,7 +20,7 @@ export default function Comments({comments}) {
                     <div className="comments__details">
                     <span className="comments__name-date">
                         <p className="comments__name">{comment.name}</p>
-                        <p className="comments__date">{comment.timestamp}</p>
+                        <p className="comments__date">{new Date(comment.timestamp).toLocaleDateString()}</p>
                     </span>
                     <p className="comments__text">{comment.comment}</p>
                     </div>
