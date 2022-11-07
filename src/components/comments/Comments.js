@@ -7,7 +7,7 @@ export default function Comments({comments}) {
         <section className="comments">
             <h4 className="comments__number">3 comments</h4>
             <div className="comments__form-container">
-                <p className="comments__join">Join the conversation</p>
+                <h4 className="comments__join">Join the conversation</h4>
                 <div className="comments__input-container">
                     <div className="comments__avatar-container">
                         <img src={Image} alt="Left side of a man's face" className="comments__avatar-image"/>

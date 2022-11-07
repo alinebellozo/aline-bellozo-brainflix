@@ -133,3 +133,52 @@
         padding: 0 1rem 0 3rem;
     }
 }
+
+@include medium {
+    .comments {
+        padding-left: 2.25rem;
+
+        &__number {
+            padding-left: 0;
+        }
+
+        &__input-container {
+            margin-left: 1.25rem;
+            padding-left: 2.25rem;
+            width: 65%;
+        }   
+
+        &__input-field {
+            min-width: 15rem;
+            height: 2.5rem;
+        }
+
+        &__button {
+            width: 25%;
+            position: absolute;
+            right: 1.125rem;
+            bottom: -9.5625rem;
+            gap: 2.5rem;
+        }
+
+        &__details {
+            margin-left: 0;
+            width: 97%;
+        }
+    }
+}
+
+@include large {
+    .comments {
+        
+        padding-left: 6.25rem;
+        padding-right: 6.25rem;
+
+        &__button {
+            width: 22%;
+            right: 6.125rem;
+            bottom: -18.5625rem;
+            gap: 3.5rem;
+        }
+    }
+}
