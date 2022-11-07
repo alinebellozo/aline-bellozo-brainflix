@@ -79,6 +79,11 @@
         align-items: center;
         gap: 5.5rem;
         padding: .5rem;
+
+        &:hover {
+            background: $Secondary-CTA-hover;
+            cursor: pointer;
+        }
     }
 
     &__button-icon {

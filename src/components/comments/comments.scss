@@ -4,36 +4,44 @@
 
 .comments {
 
-    // &__number {
+    &__number {
+        padding-left: 1rem;
+    }
 
-    // }
+    &__form-container {
+            display: flex;
+            flex-direction: column;
+        }
 
     &__join {
         text-transform: uppercase;
-        color: $Secondary-divider-form-outline;
-        // font-family: "Anevir";
+        color: $Primary-label-secondary-text;
+        padding-left: 4rem;
+        margin: 0;
+        height: 0;
     }
 
-    // &__input-container {
-
-    // }
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        width: 15rem;
+        margin-right: 1rem;
+        margin-left: auto;
+    }
 
     &__avatar-container {
         border-radius: 50%;
         max-width: 6.25rem;
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 2rem;
+        height: 2rem;
         position: relative;
         overflow: hidden;
-        top: 3.25rem;
-        left: 1rem;
+        top: 2rem;
+        right: 3rem;
     }
 
     &__avatar-image {
-        display: inline;
-        margin: 0 auto;
         height: 100%;
-        width: auto;
     }
 
     &__input-field {
@@ -46,35 +54,82 @@
         max-width: 100%;
     }
 
-    // &__button {
+    &__button {
+        text-transform: uppercase;
+        border-radius: .25rem;
+        border-style: hidden;
+        color: $Primary-background-CTA-text;
+        background-color: $Primary-CTA-active;
+        width: 75%;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        padding: .5rem;
+        margin: 1rem;
+        margin-left: 4rem;
 
-    // }
+        &:hover {
+            background: $Secondary-CTA-hover;
+            cursor: pointer;
+        }
+    }
 
-    // &__container {
+    &__button-icon {
+        display: flex;
+    }
 
-    // }
+    &__container {
+        padding: 0 1rem;
+    }
 
-    // &__avatar {
+    &__container:last-of-type {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: .0625rem solid $Secondary-divider-form-outline;
+    }
 
-    // }
+    &__avatar {
+        background-color: $Secondary-divider-form-outline;
+        border-radius: 50%;
+        max-width: 6.25rem;
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        overflow: hidden;
+        top: 3rem;
+    }
 
-    // &__details {
+    &__details {
+        border-top: .0625rem solid $Secondary-divider-form-outline;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        overflow-wrap: anywhere;
+        width: 18rem;
+        margin-left: auto;
+    }
 
-    // }
+    &__name-date {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        padding-left: 3rem;
+        width: 100%;
+    }
 
-    // &__name-date {
+    &__name {
+        font-weight: 700;
+        margin: 0;
+    }
 
-    // }
+    &__date {
+        margin: 0;
+    }
 
-    // &__name {
-
-    // }
-
-    // &__date {
-
-    // }
-
-    // &__text {
-
-    // }
+    &__text {
+        margin: 0;
+        padding: 0 1rem 0 3rem;
+    }
 }

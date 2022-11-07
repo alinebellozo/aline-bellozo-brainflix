@@ -23,15 +23,19 @@ export default function HeroSection({ videoDetails }) {
                 <div className="hero__video-details-container">
                     <h1 className="hero__video-title">{title}</h1>
                     <div className="hero__video-details">
-                        <h4 className="hero__video-channel">By {channel}</h4>
-                        <p className="hero__video-date">{new Date(videoDetails.timestamp).toLocaleDateString()}</p>
-                        <div className="hero__video-views-container">
-                            <img className="hero__video-views-icon" src={viewsIcon} alt="Views icon" />
-                            <div className="hero__video-views">{views}</div>
+                        <div className="hero__channel-date">
+                            <h4 className="hero__video-channel">By {channel}</h4>
+                            <p className="hero__video-date">{new Date(videoDetails.timestamp).toLocaleDateString()}</p>
                         </div>
-                        <div className="hero__video-likes-container">
-                            <img className="hero__video-likes-icon" src={likesIcon} alt="Likes icon" />
-                            <div className="hero__video-likes">{likes}</div>
+                        <div className="hero__views-likes">
+                                <div className="hero__video-views-container">
+                                <img className="hero__video-views-icon" src={viewsIcon} alt="Views icon" />
+                                <div className="hero__video-views">{views}</div>
+                            </div>
+                            <div className="hero__video-likes-container">
+                                <img className="hero__video-likes-icon" src={likesIcon} alt="Likes icon" />
+                                <div className="hero__video-likes">{likes}</div>
+                                </div>
                         </div>
                     </div>
                     <p className="hero__video-description">{description}</p>
