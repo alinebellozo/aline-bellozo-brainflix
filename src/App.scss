@@ -1,0 +1,18 @@
+@use "./components/styles/partials/breakpoints" as *;
+@use "./components/styles/partials/colors" as *;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Avenir";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
