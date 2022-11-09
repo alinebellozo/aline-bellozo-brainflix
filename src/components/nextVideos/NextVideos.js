@@ -9,9 +9,9 @@ export default function NextVideos({videos, onClick}) {
                 <>
                     <div className="next-videos__thumbnail-container">
                         <video
-                        className="next-videos__thumbnail"
+                        key={video.id}
                         poster={video.image}
-                        key = {video.id + video.channel}
+                        className="next-videos__thumbnail"
                         onClick={(clickEvnt) => onClick(clickEvnt, video.id)} />
                     
                         <div className="next-videos__description">

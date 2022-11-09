@@ -16,7 +16,7 @@ export default function Header() {
         </div>
         
         <nav className="header__nav-container">
-              <div className="header__nav-search-field-avatar">
+            <div className="header__nav-search-field-avatar">
                   <input className="header__search-field" placeholder="Search"></input>
                 <div className="header__avatar-container">
                     <img className="header__avatar"
@@ -25,7 +25,6 @@ export default function Header() {
                     </img>
                 </div>
             </div>
-            
               <button className="header__button" type="text">
                   <img className="header__button-icon" src={UploadButton}></img>
                   Upload

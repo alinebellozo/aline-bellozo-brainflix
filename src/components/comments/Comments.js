@@ -13,8 +13,8 @@ export default function Comments({comments}) {
                         <img src={Image} alt="Left side of a man's face" className="comments__avatar-image"/>
                     </div>
                     <textarea className="comments__input-field" id="input-field" type="text" placeholder="Add a new comment"></textarea>
-            </div>
                     <button className="comments__button" type="submit"><img className="comments__button-icon" src={commentButton} />Comment</button>
+                </div>
             </div>
             
                
