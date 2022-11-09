@@ -16,15 +16,18 @@ import videoUpload from "./pages/videoUpload/VideoUpload";
 import getVideoDetails, { getVideos } from "./components/utils/Utils.js";
 import axios from "axios";
 
-const searchByVideoId = (videoId) => `${REACT_APP_VIDEO_API_KEY}&i=${videoId}`;
-const searchByVideoName = (searchKeyword) => `${REACT_APP_VIDEO_API_KEY}&s=${searchKeyword}`;
+const apiKey = "113326eb-4846-47ae-8940-ba5da86624a4";
+
+const searchByVideoId = (videoId) => `${apiKey}&i=${videoId}`;
+const searchByVideoName = (searchKeyword) => `${apiKey}&s=${searchKeyword}`;
 
 export const videosInfo = () => {
     axios
-        .get(`https://project-2-api.herokuapp.com/register?api_key=${REACT_APP_VIDEO_API_KEY}`)
+        .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
         .then((response) => {
             const data = response.data;
             console.log(data);
+            console.log(apiKey);
         })
         .catch((error) => error);
 };
@@ -70,19 +73,12 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Navigate to="/videos" />} />
-            <Route
-              path="videos"
-              element={<NextVideos videos={videos} />}
+            <Comments videoDetails={videoDetails} searchVideoByVideoId={searchVideoByVideoId}/>
+            <Route path="videos" element={<NextVideos videos={videos} />}
             />
-            <Route
-              path="videos/:videoId"
-              element={
+            <Route path="videos/:videoId" element={
                 <>
                   <NextVideos videos={videos} />
-                  <Comments
-                    videoDetails={videoDetails}
-                    searchVideoByVideoId={searchVideoByVideoId}
-                  />
                 </>
               }
             />
@@ -90,11 +86,11 @@ export default function App() {
         </BrowserRouter>
       </div>
     </>
-  ); 
+  );
 
 }
   
-       
+  
     // const handleClick = (clickEvnt, vdeoIdClickedOn) => {
     //     setVdeoId(vdeoIdClickedOn);
     //     setVideos(getVideos(vdeoIdClickedOn));
