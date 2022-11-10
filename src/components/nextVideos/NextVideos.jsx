@@ -26,3 +26,14 @@ export default function NextVideos({videos, onClick}) {
         </aside>
     );
 }
+
+// const apiKey = "44ae354b-6e2d-41cf-a5bb-1edbe13b3d4d";
+
+// export const videosInfo = () => {
+//     axios
+//         .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
+//         .then((response) => {
+//             const data = response.data;
+//         })
+//         .catch((error) => error);
+// };
