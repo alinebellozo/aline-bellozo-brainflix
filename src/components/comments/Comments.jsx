@@ -1,11 +1,12 @@
 import "./comments.scss";
 import Image from "../../assets/images/Mohan-muruge.jpg";
-import commentButton from "../../assets/icons/add_comment.svg"
+import commentButton from "../../assets/icons/add_comment.svg";
+import React from "react";
 
 export default function Comments({comments}) {
     return (
         <section className="comments">
-            <h4 className="comments__number">3 comments</h4>
+            <h4 className="comments__number">{comments.length}comments</h4>
             <div className="comments__form-container">
                 <h4 className="comments__join">Join the conversation</h4>
                 <div className="comments__input-container">
@@ -17,7 +18,6 @@ export default function Comments({comments}) {
                 </div>
             </div>
             
-               
         {comments.map((comment) => (    
             <section className="comments__container" key={comment.name}>               
                 <div className="comments__avatar"></div>

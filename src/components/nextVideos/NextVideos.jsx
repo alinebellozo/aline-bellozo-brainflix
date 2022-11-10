@@ -1,4 +1,6 @@
 import "./nextVideos.scss";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NextVideos({videos, onClick}) {
     return (
@@ -8,15 +10,15 @@ export default function NextVideos({videos, onClick}) {
             {videos.slice(0, 8).map((video) => (
                 <>
                     <div className="next-videos__thumbnail-container">
-                        <video
+                        <Link to={"/" + video.id}
                         key={video.id}
                         poster={video.image}
                         className="next-videos__thumbnail"
-                        onClick={(clickEvnt) => onClick(clickEvnt, video.id)} />
+                        onClick={(clickEvnt) => onClick(clickEvnt, video.id)}></Link>
                     
                         <div className="next-videos__description">
-                            <p className="next-videos__video-title">{video.title}</p>
-                            <p className="next-videos__channel">{video.channel}</p>
+                            <Link to={"/" + video.id} className="next-videos__video-title">{video.title}</Link>
+                            <Link to={"/" + video.id} className="next-videos__channel">{video.channel}</Link>
                         </div>
                     </div>
                     </>

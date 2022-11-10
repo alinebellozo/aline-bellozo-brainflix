@@ -1,8 +1,7 @@
 import "./App.scss";
 
-import { useState, useEffect } from "react";
 // React router components
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Components
 import Header from "./components/header/Header";
@@ -10,10 +9,10 @@ import HeroSection from "./components/heroSection/HeroSection";
 import Comments from "./components/comments/Comments";
 import NextVideos from "./components/nextVideos/NextVideos";
 
-// Pages
+// // Pages
 import videoUpload from "./pages/videoUpload/VideoUpload";
 
-import getVideoDetails, { getVideos } from "./components/utils/Utils.js";
+// import getVideoDetails, { getVideos } from "./components/utils/Utils.js";
 import axios from "axios";
 
 const apiKey = "113326eb-4846-47ae-8940-ba5da86624a4";
@@ -26,8 +25,6 @@ export const videosInfo = () => {
         .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
         .then((response) => {
             const data = response.data;
-            console.log(data);
-            console.log(apiKey);
         })
         .catch((error) => error);
 };
@@ -66,28 +63,19 @@ export default function App() {
     }, [defaultSearch]);
     
     return (
-    <>
-      {/** Header component always needs to be shown. Hence, it is not inside BrowserRouter */}
-      <Header searchVideos={handleSearchVideos} />
-      <div className="video-container">
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
           <Routes>
-            <Route path="/" element={<Navigate to="/videos" />} />
-            <Comments videoDetails={videoDetails} searchVideoByVideoId={searchVideoByVideoId}/>
-            <Route path="videos" element={<NextVideos videos={videos} />}
-            />
-            <Route path="videos/:videoId" element={
-                <>
-                  <NextVideos videos={videos} />
-                </>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
+          <Route path="/" element={<HeroSection />} />
+          <Route path="/:videoId" element={<HeroSection />} />
+          <Route path="/upload" />
+            {/* <Comments /> */}
+            {/* <NextVideos /> */}
+        </Routes>
       </div>
-    </>
+    </BrowserRouter>
   );
-
 }
   
   
