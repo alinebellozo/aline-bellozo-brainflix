@@ -1,0 +1,97 @@
+@use "../../components/styles/partials/fonts";
+@use "../../components/styles/partials/breakpoints" as *;
+@use "../../components/styles/partials/colors" as *;
+
+.video-upload {
+
+    &__title {
+        font-size: 2.25rem;
+    }
+
+    // &__container {
+
+    // }
+
+    // &__thumbnail-container {
+
+    // }
+
+    &__thumbnail {
+        text-transform: uppercase;
+        color: $Primary-label-secondary-text;
+    }
+
+    // &__thumnail-image {
+
+    // }
+
+    // &__details {
+
+    // }
+
+    // &__title-container {
+
+    // }
+
+    &__video-title {
+        text-transform: uppercase;
+        color: $Primary-label-secondary-text;
+    }
+
+    &__title-input-field {
+        background-color: $Secondary-form-background;
+        font-family: "Avenir";
+        border: .0625rem solid $Secondary-divider-form-outline;
+        border-radius: .25rem;
+    }
+
+    // &__description-container {
+
+    // }
+
+    // &__description {
+
+    // }
+
+    &__description-input-field {
+        background-color: $Secondary-form-background;
+        font-family: "Avenir";
+        border: .0625rem solid $Secondary-divider-form-outline;
+        border-radius: .25rem;
+        min-height: 2.25rem;
+        padding: .75rem;
+        max-width: 100%;
+    }
+
+    // &__button-container {
+
+    // }
+
+    &__cancel {
+        display: none;
+    }
+
+    &__button {
+        text-transform: uppercase;
+        color: $Primary-background-CTA-text;
+        background-color: $Primary-CTA-active;
+        border-radius: .25rem;
+        border-style: hidden;
+        width: 75%;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        padding: .5rem;
+        margin: 1rem;
+        margin-left: 4rem;
+    }
+
+    &__button-icon {
+        display: flex;
+    }
+
+    &__cancel-second {
+        text-transform: uppercase;
+        color: $Primary-CTA-active;
+    }
+}

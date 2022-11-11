@@ -20,11 +20,12 @@ export default function HeroSection({videoDetails}) {
     /* Component Mounted */
     useEffect(() => {
       axios
-          .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
+          .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
         .then((response) => {
           console.log(response.data);
         })
         .catch((error) => console.log(error));
+        console.log(videoId);
     }, [videoId]);
 
     return (  

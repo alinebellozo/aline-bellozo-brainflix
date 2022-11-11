@@ -1,13 +1,12 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/header/Header";
-import HeroSection from "./components/heroSection/HeroSection";
-import Comments from "./components/comments/Comments";
-import NextVideos from "./components/nextVideos/NextVideos";
-import videoUpload from "./pages/videoUpload/VideoUpload";
+import Header from "./components/header/Header.jsx";
+import HomePage from "./pages/homePage/HomePage.jsx";
+// import Comments from "./components/comments/Comments";
+// import NextVideos from "./components/nextVideos/NextVideos";
+import VideoUpload from "./pages/videoUpload/VideoUpload.jsx";
 // import getVideoDetails, { getVideos } from "./components/utils/Utils.js";
-import axios from "axios";
-
+// import axios from "axios";
 
 // const searchByVideoId = (videoId) => `${apiKey}&i=${videoId}`;
 // const searchByVideoName = (searchKeyword) => `${apiKey}&s=${searchKeyword}`;
@@ -19,10 +18,10 @@ export default function App() {
         <div className="App">
           <Header />
           <Routes>
-          <Route path="/" element={<HeroSection />} />
-            <Route path="/:videoId" element={<HeroSection />} />
+          <Route path="/" element={<HomePage />} />
+            <Route path="/:videoId" element={<HomePage />} />
             {/* <Route path="/:videoId" element={<NextVideos />} /> */}
-            <Route path="/upload" />
+            <Route path="/upload" element={<VideoUpload/> } />
             {/* <Comments /> */}
         </Routes>
       </div>
