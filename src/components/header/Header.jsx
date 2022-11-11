@@ -27,7 +27,7 @@ export default function Header() {
                     </div>
                 </div>
                 <button className="header__button" type="text">
-                    <img className="header__button-icon" src={UploadButton}></img>
+                    <img className="header__button-icon" src={UploadButton} alt="Upload icon"></img>
                     Upload
                 </button>
                 <div className="header__avatar-container-second">

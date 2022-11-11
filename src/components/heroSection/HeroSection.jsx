@@ -15,22 +15,20 @@ export default function HeroSection({videoDetails}) {
     const defaultVideoId = videos.length > 0 ? videos[0].id : null;
 
     const { videoId } = useParams();
-    const videoToDisplay = videoId || defaultVideoId;
+    // const videoToDisplay = videoId || defaultVideoId;
     
     /* Component Mounted */
     useEffect(() => {
       axios
           .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
         .then((response) => {
-          setVideos.console.log(response.data);
+          console.log(response.data);
         })
         .catch((error) => console.log(error));
-    }, []);
-
-    //Here I need something to "return" the API data
+    }, [videoId]);
 
     return (  
-        Object.keys(videoDetails).length > 0 && (
+       videoDetails && (
             <section className="hero">
                 <section className="hero__video-container">
                     <video src="" poster={videoDetails.image} className="hero__video" controls />

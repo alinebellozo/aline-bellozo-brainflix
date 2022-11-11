@@ -7,7 +7,7 @@ export default function NextVideos({videos, onClick}) {
 
         <aside className="next-videos">
             <h4 className="next-videos__title">Next videos</h4>
-            {videos.slice(0, 8).map((video) => (
+            {videos.map((video) => (
                 <>
                     <div className="next-videos__thumbnail-container">
                         <Link to={"/" + video.id}
