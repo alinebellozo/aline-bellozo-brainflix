@@ -14,7 +14,7 @@
 
 /* media query for desktops */
 @mixin large {
-    @media only screen and (min-width: 1028px) {
+    @media only screen and (min-width: 1280px) {
         @content;
     }
 }

@@ -16,7 +16,6 @@ export default function Comments({ name, comment, date }) {
           <p className="comments__text">{comment}</p>
         </div>
       </section>
-      ;
     </>
   );
 }

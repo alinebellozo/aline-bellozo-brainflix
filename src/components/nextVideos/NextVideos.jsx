@@ -2,20 +2,19 @@ import "./nextVideos.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function NextVideos({ videos, onClick }) {
+export default function NextVideos(props) {
   return (
     <aside className="next-videos">
       <h4 className="next-videos__title">Next videos</h4>
-      {videos.filter((video) =>
-        (video.id !== video.videoDetails.id).map((video) => (
+      {props.videos
+        .filter((video) => video.id !== props.videoDetails.id)
+        .map((video) => (
           <>
             <div className="next-videos__thumbnail-container">
               <Link
                 to={"/" + video.id}
-                key={video.id}
                 poster={video.image}
                 className="next-videos__thumbnail"
-                onClick={(clickEvnt) => onClick(clickEvnt, video.id)}
               ></Link>
 
               <div className="next-videos__description">
@@ -28,8 +27,7 @@ export default function NextVideos({ videos, onClick }) {
               </div>
             </div>
           </>
-        ))
-      )}
+        ))}
     </aside>
   );
 }

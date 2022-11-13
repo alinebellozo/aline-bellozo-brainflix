@@ -122,6 +122,8 @@ export default function HomePage() {
         </section>
       </section>
 
+      {/* <CommentsForm /> */}
+
       {videoDetails.comments?.map((video, index) => (
         <Comments
           key={video.id}
@@ -130,8 +132,7 @@ export default function HomePage() {
           date={video.timestamp}
         />
       ))}
-
-      {/* <NextVideos /> */}
+      <NextVideos videos={videos} videoDetails={videoDetails} />
     </>
     // )
   );
