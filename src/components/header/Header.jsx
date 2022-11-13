@@ -3,7 +3,7 @@ import Logo from "../../assets/logo/BrainFlix-logo.svg";
 import Image from "../../assets/images/Mohan-muruge.jpg";
 import UploadButton from "../../assets/icons/upload.svg";
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
@@ -28,8 +28,10 @@ export default function Header() {
                     </div>
                 </div>
                 <button className="header__button" type="text">
+                    <Link className="header__button-link" to="/upload">
                     <img className="header__button-icon" src={UploadButton} alt="Upload icon"></img>
                     Upload
+                </Link>
                 </button>
                 <div className="header__avatar-container-second">
                     <img className="header__avatar-second"

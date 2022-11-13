@@ -8,21 +8,15 @@ import VideoUpload from "./pages/videoUpload/VideoUpload.jsx";
 // import getVideoDetails, { getVideos } from "./components/utils/Utils.js";
 // import axios from "axios";
 
-// const searchByVideoId = (videoId) => `${apiKey}&i=${videoId}`;
-// const searchByVideoName = (searchKeyword) => `${apiKey}&s=${searchKeyword}`;
-
 export default function App() {
-  
-    return (
-      <BrowserRouter>
-        <div className="App">
-          <Header />
-          <Routes>
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
           <Route path="/" element={<HomePage />} />
-            <Route path="/:videoId" element={<HomePage />} />
-            {/* <Route path="/:videoId" element={<NextVideos />} /> */}
-            <Route path="/upload" element={<VideoUpload/> } />
-            {/* <Comments /> */}
+          <Route path="/:videoId" element={<HomePage />} />
+          <Route path="/upload" element={<VideoUpload />} />
         </Routes>
       </div>
     </BrowserRouter>

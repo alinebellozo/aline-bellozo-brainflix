@@ -11,7 +11,7 @@ export default function VideoUpload() {
             <div className="video-upload__container">
                 <div className="video-upload__thumbnail-container">
                     <h4 className="video-upload__thumbnail">Video Thumbnail</h4>
-                    <img className="video-upload__thumnail-image" src={ThumbnailImage} alt="Video thumbnail"/>
+                    <img className="video-upload__thumbnail-image" src={ThumbnailImage} alt="Video thumbnail"/>
                 </div>
                 <div className="video-upload__details">
                     <div className="video-upload__title-container">

@@ -2,38 +2,32 @@ import "./nextVideos.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function NextVideos({videos, onClick}) {
-    return (
+export default function NextVideos({ videos, onClick }) {
+  return (
+    <aside className="next-videos">
+      <h4 className="next-videos__title">Next videos</h4>
+      {videos.map((video) => (
+        <>
+          <div className="next-videos__thumbnail-container">
+            <Link
+              to={"/" + video.id}
+              key={video.id}
+              poster={video.image}
+              className="next-videos__thumbnail"
+              onClick={(clickEvnt) => onClick(clickEvnt, video.id)}
+            ></Link>
 
-        <aside className="next-videos">
-            <h4 className="next-videos__title">Next videos</h4>
-            {videos.map((video) => (
-                <>
-                    <div className="next-videos__thumbnail-container">
-                        <Link to={"/" + video.id}
-                        key={video.id}
-                        poster={video.image}
-                        className="next-videos__thumbnail"
-                        onClick={(clickEvnt) => onClick(clickEvnt, video.id)}></Link>
-                    
-                        <div className="next-videos__description">
-                            <Link to={"/" + video.id} className="next-videos__video-title">{video.title}</Link>
-                            <Link to={"/" + video.id} className="next-videos__channel">{video.channel}</Link>
-                        </div>
-                    </div>
-                    </>
-            ))} 
-        </aside>
-    );
+            <div className="next-videos__description">
+              <Link to={"/" + video.id} className="next-videos__video-title">
+                {video.title}
+              </Link>
+              <Link to={"/" + video.id} className="next-videos__channel">
+                {video.channel}
+              </Link>
+            </div>
+          </div>
+        </>
+      ))}
+    </aside>
+  );
 }
-
-// const apiKey = "44ae354b-6e2d-41cf-a5bb-1edbe13b3d4d";
-
-// export const videosInfo = () => {
-//     axios
-//         .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
-//         .then((response) => {
-//             const data = response.data;
-//         })
-//         .catch((error) => error);
-// };

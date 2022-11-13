@@ -4,6 +4,7 @@
 
 .header {
     padding: 1rem;
+    border-bottom: .0625rem solid $Secondary-divider-form-outline;
     
     &__logo-container {
         display: flex;
@@ -65,6 +66,13 @@
     }
 
     &__button {
+        border-style: none;
+        background-color: white;
+        padding: 0;
+    }
+
+    &__button-link {
+        text-decoration: none;
         text-transform: uppercase;
         border-radius: .25rem;
         border-style: hidden;
@@ -111,7 +119,7 @@
             display: none;
         }
 
-        &__button {
+        &__button-link {
             width: 10rem;
             gap: 1.6rem;
         }
