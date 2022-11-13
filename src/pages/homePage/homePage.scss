@@ -1,3 +1,114 @@
 @use "../../components/styles/partials/fonts";
 @use "../../components/styles/partials/breakpoints" as *;
 @use "../../components/styles/partials/colors" as *;
+
+.home {
+
+    &__video {
+        width: 100%;
+        height: auto;
+        background-color: $Secondary-video-player-components;
+        aspect-ratio: 16/9;
+    }
+
+    &__video-title {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 0;
+        border-bottom: .0625rem solid $Secondary-divider-form-outline;
+    }
+
+    &__video-details {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        border-bottom: .0625rem solid $Secondary-divider-form-outline;
+    }
+
+    &__video-channel {
+        margin: 0;
+        padding-bottom: 1.125rem;
+    }
+
+    &__video-date {
+        margin: 0;
+        color: $Primary-label-secondary-text;
+    }
+
+    &__video-views-container {
+        display: flex;
+        padding-bottom: 1.125rem;
+        gap: .5rem;
+    }
+
+    &__video-views,
+    &__video-likes {
+        color: $Primary-label-secondary-text;
+    }
+
+    &__video-likes-container {
+        display: flex;
+        gap: .5rem;
+    }
+
+    &__video-description {
+        padding: 1rem;
+        margin: 0;
+    }
+}
+
+@include medium {
+    .home {
+
+        &__video {
+            padding: 0 2.25rem;
+        }
+
+        &__video-title {
+            padding-left: 2.25rem;
+            font-size: 2.0625rem;
+        }
+
+        &__video-details {
+            padding: 1rem 2.25rem 0 2.25rem;
+        }
+
+        &__channel-date {
+            display: flex;
+            width: 13.625rem;
+            justify-content: space-between;
+        }
+
+        &__views-likes {
+            display: flex;
+            width: 27.125rem;
+            justify-content: flex-end;
+            gap: 3.125rem;
+        }
+
+        &__video-likes-container {
+            align-items: flex-start;
+        }
+
+        &__video-description {
+            padding: 1.5rem 2.25rem;
+        }
+    }
+}
+
+@include large {
+    .home {
+
+        &__video {
+            padding: 0 6.25rem;
+        }
+
+        &__video-details-container {
+            padding-left: 6.25rem;
+            padding-right: 6.25rem;
+        }
+    }
+
+}
