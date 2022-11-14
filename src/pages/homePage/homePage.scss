@@ -57,6 +57,10 @@
         padding: 1rem;
         margin: 0;
     }
+
+    &__comments-number {
+        padding-left: 2.25rem;
+    }
 }
 
 @include medium {
@@ -101,14 +105,18 @@
 @include large {
     .home {
 
-        &__video {
-            padding: 0 6.25rem;
-        }
-
         &__video-details-container {
-            padding-left: 6.25rem;
-            padding-right: 6.25rem;
+            padding-left: 4rem;
+            padding-right: 4rem;
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+        }
+        
+        &__container-left {
+            display: flex;
+            flex-direction: column;
         }
     }
-
+    
 }

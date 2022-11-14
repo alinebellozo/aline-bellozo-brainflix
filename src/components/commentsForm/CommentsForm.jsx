@@ -6,7 +6,6 @@ import React from "react";
 export default function CommentsForm() {
   return (
     <section className="comments">
-      {/* <h4 className="comments__number"> comments</h4> */}
       <div className="comments__form-container">
         <h4 className="comments__join">Join the conversation</h4>
         <div className="comments__input-container">
@@ -17,20 +16,22 @@ export default function CommentsForm() {
               className="comments__avatar-image"
             />
           </div>
-          <textarea
-            className="comments__input-field"
-            id="input-field"
-            type="text"
-            placeholder="Add a new comment"
-          ></textarea>
-          <button className="comments__button" type="submit">
-            <img
-              className="comments__button-icon"
-              src={commentButton}
-              alt="Add comment icon"
-            />
-            Comment
-          </button>
+          <div className="comments__text-button">
+            <textarea
+              className="comments__input-field"
+              id="input-field"
+              type="text"
+              placeholder="Add a new comment"
+            ></textarea>
+            <button className="comments__button" type="submit">
+              <img
+                className="comments__button-icon"
+                src={commentButton}
+                alt="Add comment icon"
+              />
+              Comment
+            </button>
+          </div>
         </div>
       </div>
     </section>

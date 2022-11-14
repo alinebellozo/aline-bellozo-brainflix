@@ -14,7 +14,6 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/:videoId" element={<HomePage />} />
           <Route path="/upload" element={<VideoUpload />} />
-          {/* <Route path="/success" element={} /> */}
         </Routes>
       </div>
     </BrowserRouter>

@@ -18,7 +18,6 @@ export default function VideoUpload() {
             alt="Video thumbnail"
           />
         </div>
-
         <div className="video-upload__details">
           <div className="video-upload__title-container">
             <h4 className="video-upload__video-title">Title your video</h4>

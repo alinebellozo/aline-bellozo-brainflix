@@ -65,8 +65,6 @@ export default function HomePage() {
       //else statement for if the video id is not defined
     } else {
       axios
-        //you will set the video id to the default in the state. You may need to change this to
-        //hard code the id of the BMX code.
         .get(
           `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}`
         )
@@ -123,12 +121,12 @@ export default function HomePage() {
             <p className="home__video-description">
               {videoDetails.description}
             </p>
+            <h4 className="home__comments-number">3 comments</h4>
           </div>
         </section>
       </section>
 
       <CommentsForm />
-
       {videoDetails.comments?.map((video, index) => (
         <Comments
           key={video.id}
@@ -137,8 +135,10 @@ export default function HomePage() {
           date={video.timestamp}
         />
       ))}
-      <NextVideos videos={videos} videoDetails={videoDetails} />
+
+      <section className="next-videos__container-right">
+        <NextVideos videos={videos} videoDetails={videoDetails} />
+      </section>
     </>
-    // )
   );
 }

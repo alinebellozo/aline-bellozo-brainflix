@@ -6,9 +6,8 @@
     
     display: flex;
     flex-direction: column;
-    width: 100vw;
     margin: 0;
-    height: 50vh;
+    height: auto;
     padding: 1rem;
 
     &::-webkit-scrollbar {
@@ -19,17 +18,20 @@
         text-transform: uppercase;
         color: $Primary-label-secondary-text;
         margin-top: 0;
+        border-top: .0625rem solid $Secondary-divider-form-outline;
+        padding-top: 1rem;
     }
 
     &__thumbnail-container {
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
     }
 
     &__thumbnail {
         width: 7rem;
-        height: auto;
-        border-radius: .25rem;
+        height: 4.25rem;
+        border-radius: 0.3rem;
         flex-shrink: 0;
         margin: 0 1rem 1rem 0;
         max-width: 50%;        
@@ -39,10 +41,27 @@
         font-size: 13px;
         line-height: 1rem;
         padding-top: 0.25rem;
+        display: flex;
+        flex-direction: column;
     }
 
     &__video-title {
+        text-decoration: none;
         font-weight: 700;
         margin: 0;
     }
+}
+
+@include large {
+  
+    .next-videos {
+        
+        &__container-right {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;        
+        }
+
+
+  }
 }

@@ -8,13 +8,6 @@
         padding: 0 1rem;
     }
 
-    &__container:last-of-type {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: .0625rem solid $Secondary-divider-form-outline;
-    }
-
-
     &__avatar {
         background-color: $Secondary-divider-form-outline;
         border-radius: 50%;
@@ -41,8 +34,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 1rem;
-        padding-left: 3rem;
+        padding: 1rem .5rem .5rem 3rem;
         width: 100%;
     }
 
@@ -68,6 +60,24 @@
         &__details {
             margin-left: 0;
             width: 97%;
+        }
+
+        &__container {
+            padding: 0 2.25rem;
+        }
+    }
+}
+
+@include large {
+    
+    .comments {
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            padding-left: 6.25rem;
+            padding-right: 0;
         }
     }
 }
