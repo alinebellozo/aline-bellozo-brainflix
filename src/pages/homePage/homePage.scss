@@ -1,8 +1,8 @@
-@use "../styles/partials/fonts";
-@use "../styles/partials/breakpoints" as *;
-@use "../styles/partials/colors" as *;
+@use "../../components/styles/partials/fonts";
+@use "../../components/styles/partials/breakpoints" as *;
+@use "../../components/styles/partials/colors" as *;
 
-.hero {
+.home {
 
     &__video {
         width: 100%;
@@ -10,6 +10,7 @@
         background-color: $Secondary-video-player-components;
         aspect-ratio: 16/9;
     }
+    
 
     &__video-title {
         font-size: 1.5rem;
@@ -43,7 +44,8 @@
         gap: .5rem;
     }
 
-    &__video-views, &__video-likes {
+    &__video-views,
+    &__video-likes {
         color: $Primary-label-secondary-text;
     }
 
@@ -56,10 +58,15 @@
         padding: 1rem;
         margin: 0;
     }
+
+    &__comments-number {
+        padding-left: 2.25rem;
+        margin-top: 0;
+    }
 }
 
 @include medium {
-    .hero {
+    .home {
 
         &__video {
             padding: 0 2.25rem;
@@ -67,7 +74,9 @@
 
         &__video-title {
             padding-left: 2.25rem;
+            padding-bottom: 0;
             font-size: 2.0625rem;
+            border-bottom: none;
         }
 
         &__video-details {
@@ -98,15 +107,23 @@
 }
 
 @include large {
-    .hero {
-        
-        &__video {
-            padding: 0 6.25rem;
+    .home {
+
+        &__page-container {
+            display: flex;
+
         }
 
         &__video-details-container {
-            padding-left: 6.25rem;
-            padding-right: 6.25rem;
+            padding-left: 4rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        &__container-left {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
         }
     }
     

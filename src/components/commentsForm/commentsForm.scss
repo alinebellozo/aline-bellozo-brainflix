@@ -1,0 +1,139 @@
+@use "../styles/partials/fonts" as *;
+@use "../styles/partials/breakpoints" as *;
+@use "../styles/partials/colors" as *;
+
+.comments {
+
+    &__form-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+    &__join {
+        text-transform: uppercase;
+        color: $Primary-label-secondary-text;
+        padding-left: 4rem;
+        margin: 0;
+        height: 0;
+    }
+
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        width: 15rem;
+        margin-right: 1rem;
+        margin-left: auto;
+    }
+
+    &__avatar-container {
+        border-radius: 50%;
+        max-width: 6.25rem;
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        overflow: hidden;
+        top: 2rem;
+        right: 3rem;
+    }
+
+    &__avatar-image {
+        height: 100%;
+    }
+
+    &__text-button {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input-field {
+        background-color: $Secondary-form-background;
+        font-family: "Avenir";
+        border: .0625rem solid $Secondary-divider-form-outline;
+        border-radius: .25rem;
+        min-height: 2.25rem;
+        padding: .75rem;
+        max-width: 100%;
+    }
+
+    &__button {
+        text-transform: uppercase;
+        border-radius: .25rem;
+        border-style: hidden;
+        color: $Primary-background-CTA-text;
+        background-color: $Primary-CTA-active;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        padding: .5rem;
+        margin: 1rem 0;
+
+        &:hover {
+            background: $Secondary-CTA-hover;
+            cursor: pointer;
+        }
+    }
+
+    &__button-icon {
+        display: flex;
+    }
+}
+
+@include medium {
+    .comments {
+        padding-left: 2.25rem;
+
+        &__join {
+            padding-left: 3.5rem;
+        }
+
+        &__input-container {
+            margin-left: 1.25rem;
+            padding-left: 2.25rem;
+            width: 65%;
+
+            &::placeholder {
+                color: $Primary-text;
+            }
+        } 
+        
+        &__text-button {
+            flex-direction: row;
+            align-items: flex-start;
+            width: 140%;
+            gap: 1.5625rem;
+        }
+
+        &__input-field {
+            min-width: 15rem;
+            height: 2.5rem;
+            width: 90%;
+        }
+
+        &__button {
+            width: 40%;
+            gap: 2rem;
+            margin-top: 0;
+        }
+    }
+}
+
+@include large {
+    .comments {
+        
+        padding-left: 6.25rem;
+
+        &__form-container {
+            margin-right: 0;
+        }
+
+        &__text-button {
+            width: 35rem;
+        }
+
+        &__button {
+            width: 40%;
+            gap: 1rem;
+        }
+    }
+}
