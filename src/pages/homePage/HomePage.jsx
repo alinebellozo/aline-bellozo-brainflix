@@ -81,63 +81,70 @@ export default function HomePage() {
   return (
     <>
       <section className="home">
-        <section className="home__video-container">
-          <video
-            src=""
-            poster={videoDetails.image}
-            className="home__video"
-            controls
-          />
-          <div className="home__video-details-container">
-            <h1 className="home__video-title">{videoDetails.title}</h1>
-            <div className="home__video-details">
-              <div className="home__channel-date">
-                <h4 className="home__video-channel">
-                  By {videoDetails.channel}
-                </h4>
-                <p className="home__video-date">
-                  {new Date(videoDetails.timestamp).toLocaleDateString()}
-                </p>
-              </div>
-              <div className="home__views-likes">
-                <div className="home__video-views-container">
-                  <img
-                    className="home__video-views-icon"
-                    src={viewsIcon}
-                    alt="Views icon"
-                  />
-                  <div className="home__video-views">{videoDetails.views}</div>
-                </div>
-                <div className="home__video-likes-container">
-                  <img
-                    className="home__video-likes-icon"
-                    src={likesIcon}
-                    alt="Likes icon"
-                  />
-                  <div className="home__video-likes">{videoDetails.likes}</div>
-                </div>
-              </div>
-            </div>
-            <p className="home__video-description">
-              {videoDetails.description}
-            </p>
-            <h4 className="home__comments-number">3 comments</h4>
-          </div>
-        </section>
-      </section>
-
-      <CommentsForm />
-      {videoDetails.comments?.map((video, index) => (
-        <Comments
-          key={video.id}
-          comment={video.comment}
-          name={video.name}
-          date={video.timestamp}
+        <video
+          src=""
+          poster={videoDetails.image}
+          className="home__video"
+          controls
         />
-      ))}
 
-      <section className="next-videos__container-right">
-        <NextVideos videos={videos} videoDetails={videoDetails} />
+        <div className="home__page-container">
+          <div className="home__container-left">
+            <div className="home__video-details-container">
+              <h1 className="home__video-title">{videoDetails.title}</h1>
+              <div className="home__video-details">
+                <div className="home__channel-date">
+                  <h4 className="home__video-channel">
+                    By {videoDetails.channel}
+                  </h4>
+                  <p className="home__video-date">
+                    {new Date(videoDetails.timestamp).toLocaleDateString()}
+                  </p>
+                </div>
+                <div className="home__views-likes">
+                  <div className="home__video-views-container">
+                    <img
+                      className="home__video-views-icon"
+                      src={viewsIcon}
+                      alt="Views icon"
+                    />
+                    <div className="home__video-views">
+                      {videoDetails.views}
+                    </div>
+                  </div>
+                  <div className="home__video-likes-container">
+                    <img
+                      className="home__video-likes-icon"
+                      src={likesIcon}
+                      alt="Likes icon"
+                    />
+                    <div className="home__video-likes">
+                      {videoDetails.likes}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="home__video-description">
+                {videoDetails.description}
+              </p>
+              <h4 className="home__comments-number">3 comments</h4>
+            </div>
+
+            <CommentsForm />
+            {videoDetails.comments?.map((video, index) => (
+              <Comments
+                key={video.id}
+                comment={video.comment}
+                name={video.name}
+                date={video.timestamp}
+              />
+            ))}
+          </div>
+
+          <section className="next-videos__container-right">
+            <NextVideos videos={videos} videoDetails={videoDetails} />
+          </section>
+        </div>
       </section>
     </>
   );

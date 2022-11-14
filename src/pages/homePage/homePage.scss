@@ -10,6 +10,7 @@
         background-color: $Secondary-video-player-components;
         aspect-ratio: 16/9;
     }
+    
 
     &__video-title {
         font-size: 1.5rem;
@@ -108,17 +109,21 @@
 @include large {
     .home {
 
+        &__page-container {
+            display: flex;
+
+        }
+
         &__video-details-container {
             padding-left: 4rem;
-            padding-right: 4rem;
             display: flex;
             flex-direction: column;
-            width: 75%;
         }
         
         &__container-left {
             display: flex;
             flex-direction: column;
+            width: 60%;
         }
     }
     
