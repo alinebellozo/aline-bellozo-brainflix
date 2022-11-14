@@ -1,5 +1,7 @@
 import "./videoUpload.scss";
 import React from "react";
+import SuccessPage from "../successPage/SuccessPage";
+import { Link } from "react-router-dom";
 import ThumbnailImage from "../../assets/images/Upload-video-preview.jpg";
 import PublishVideo from "../../assets/icons/publish.svg";
 
@@ -16,6 +18,7 @@ export default function VideoUpload() {
             alt="Video thumbnail"
           />
         </div>
+
         <div className="video-upload__details">
           <div className="video-upload__title-container">
             <h4 className="video-upload__video-title">Title your video</h4>
@@ -41,6 +44,7 @@ export default function VideoUpload() {
       </div>
       <div className="video-upload__button-container">
         <p className="video-upload__cancel">Cancel</p>
+        {/* <Link to={<SuccessPage />}> */}
         <button className="video-upload__button" type="submit">
           <img
             className="video-upload__button-icon"
@@ -49,6 +53,7 @@ export default function VideoUpload() {
           />
           Publish
         </button>
+        {/* </Link> */}
         <p className="video-upload__cancel-second">Cancel</p>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import "./homePage.scss";
 import Comments from "../../components/comments/Comments";
+import CommentsForm from "../../components/commentsForm/CommentsForm";
 import NextVideos from "../../components/nextVideos/NextVideos";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
@@ -30,40 +31,6 @@ export default function HomePage() {
         setVideos(response.data);
       })
       .catch((error) => console.log(error));
-  }, []);
-
-  //use effect for the main video
-  // useEffect(() => {
-  //   //check if the videoId is undefined
-  //   if (videoId !== undefined) {
-  //     axios
-  //       .get(
-  //         `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`
-  //       )
-  //       .then((response) => {
-  //         //set main video with the data from the api call
-  //         setMainVid(response.data);
-  //       })
-  //       .catch((error) => console.log(error));
-  //     //else statement for if the video id is not defined
-  //   } else {
-  //     axios
-  //       //you will set the video id to the default in the state. You may need to change this to
-  //       //hard code the id of the BMX code.
-  //       .get(
-  //         `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}`
-  //       )
-  //       .then((response) => {
-  //         //console.log(response.data);
-  //         //set the data from this axios call to the setMainVid state
-  //         setMainVid(response.data);
-  //       })
-  //       .catch((error) => console.log(error));
-  //   }
-  //   //this use effect is dependant on the videoId
-  // }, [videoId]);
-
-  useEffect(() => {
     axios
       .get(
         `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}`
@@ -73,9 +40,47 @@ export default function HomePage() {
       });
   }, []);
 
-  console.log(videoDetails);
+  // use effect for the main video
+  useEffect(() => {
+    //check if the videoId is undefined
+    if (videoId !== undefined) {
+      axios
+        .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`)
+        .then((response) => {
+          //set state video with the response from the API
+          setVideos(response.data);
+        })
+        .catch((error) => console.log(error));
+      axios
+        .get(
+          `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`
+        )
+        .then((response) => {
+          //set main video with the data from the api call
+          setMainVid(response.data);
+          setVideoDetails(response.data);
+          // console.log(response.data);
+        })
+        .catch((error) => console.log(error));
+      //else statement for if the video id is not defined
+    } else {
+      axios
+        //you will set the video id to the default in the state. You may need to change this to
+        //hard code the id of the BMX code.
+        .get(
+          `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}`
+        )
+        .then((response) => {
+          //console.log(response.data);
+          //set the data from this axios call to the setMainVid state
+          setMainVid(response.data);
+        })
+        .catch((error) => console.log(error));
+    }
+    //this use effect is dependant on the videoId
+  }, [videoId]);
+
   return (
-    // videoDetails && (
     <>
       <section className="home">
         <section className="home__video-container">
@@ -122,7 +127,7 @@ export default function HomePage() {
         </section>
       </section>
 
-      {/* <CommentsForm /> */}
+      <CommentsForm />
 
       {videoDetails.comments?.map((video, index) => (
         <Comments
