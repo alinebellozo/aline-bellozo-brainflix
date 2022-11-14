@@ -60,6 +60,7 @@
 
     &__comments-number {
         padding-left: 2.25rem;
+        margin-top: 0;
     }
 }
 
@@ -72,7 +73,9 @@
 
         &__video-title {
             padding-left: 2.25rem;
+            padding-bottom: 0;
             font-size: 2.0625rem;
+            border-bottom: none;
         }
 
         &__video-details {

@@ -18,7 +18,6 @@
         text-transform: uppercase;
         color: $Primary-label-secondary-text;
         margin-top: 0;
-        border-top: .0625rem solid $Secondary-divider-form-outline;
         padding-top: 1rem;
     }
 
@@ -49,6 +48,21 @@
         text-decoration: none;
         font-weight: 700;
         margin: 0;
+    }
+}
+
+@include medium {
+    
+    .next-videos {
+        
+        align-items: flex-start;
+        padding-left: 1rem;
+        margin: 1rem 3.5rem 1rem 2rem;
+        border-top: .0625rem solid $Secondary-divider-form-outline;
+        
+        &__title {
+            margin-right: 2.25rem;
+        }
     }
 }
 
