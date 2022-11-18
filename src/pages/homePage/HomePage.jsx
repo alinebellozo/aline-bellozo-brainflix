@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+// delete this later
 const apiKey = "44ae354b-6e2d-41cf-a5bb-1edbe13b3d4d";
 
 export default function HomePage() {
@@ -25,7 +26,7 @@ export default function HomePage() {
   //getting list of videos
   useEffect(() => {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`)
+      .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`) // replace with http://localhost:8080/videos
       .then((response) => {
         //set state video with the response from the API
         setVideos(response.data);
@@ -33,7 +34,7 @@ export default function HomePage() {
       .catch((error) => console.log(error));
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}`
+        `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}` // replace with http://localhost:8080/videos/:id
       )
       .then((response) => {
         setVideoDetails(response.data);
@@ -45,7 +46,7 @@ export default function HomePage() {
     //check if the videoId is undefined
     if (videoId !== undefined) {
       axios
-        .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`)
+        .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`) // replace with http://localhost:8080/videos
         .then((response) => {
           //set state video with the response from the API
           setVideos(response.data);
