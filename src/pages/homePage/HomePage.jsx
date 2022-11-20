@@ -9,14 +9,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// delete this later
-const apiKey = "44ae354b-6e2d-41cf-a5bb-1edbe13b3d4d";
-
 export default function HomePage() {
   //main video still as a state
-  const [mainVid, setMainVid] = useState(
-    "84e96018-4022-434e-80bf-000ce4cd12b8"
-  );
+  const [mainVid] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
   //THERE BEFORE
   const [videos, setVideos] = useState([]);
   const [videoDetails, setVideoDetails] = useState([]);
@@ -26,19 +21,15 @@ export default function HomePage() {
   //getting list of videos
   useEffect(() => {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`) // replace with http://localhost:8080/videos
+      .get(`http://localhost:8080/videos`)
       .then((response) => {
         //set state video with the response from the API
         setVideos(response.data);
       })
       .catch((error) => console.log(error));
-    axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}` // replace with http://localhost:8080/videos/:id
-      )
-      .then((response) => {
-        setVideoDetails(response.data);
-      });
+    axios.get(`http://localhost:8080/videos/${mainVid}`).then((response) => {
+      setVideoDetails(response.data);
+    });
   }, []);
 
   // use effect for the main video
@@ -46,33 +37,31 @@ export default function HomePage() {
     //check if the videoId is undefined
     if (videoId !== undefined) {
       axios
-        .get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`) // replace with http://localhost:8080/videos
+        .get(`http://localhost:8080/videos`)
         .then((response) => {
           //set state video with the response from the API
           setVideos(response.data);
         })
         .catch((error) => console.log(error));
       axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`
-        )
+        .get(`http://localhost:8080/videos/${videoId}`)
         .then((response) => {
           //set main video with the data from the api call
-          setMainVid(response.data);
+          //setMainVid(response.data);
           setVideoDetails(response.data);
           // console.log(response.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+        });
       //else statement for if the video id is not defined
     } else {
       axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${mainVid}?api_key=${apiKey}`
-        )
+        .get(`http://localhost:8080/videos/${mainVid}`)
         .then((response) => {
           //console.log(response.data);
           //set the data from this axios call to the setMainVid state
-          setMainVid(response.data);
+          setVideoDetails(response.data);
         })
         .catch((error) => console.log(error));
     }

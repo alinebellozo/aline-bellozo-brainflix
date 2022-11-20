@@ -1,9 +1,11 @@
 import "./videoUpload.scss";
+import "../homePage/HomePage";
 import React from "react";
 // import SuccessPage from "../successPage/SuccessPage";
 import ThumbnailImage from "../../assets/images/Upload-video-preview.jpg";
 import PublishVideo from "../../assets/icons/publish.svg";
 import { useState } from "react";
+import axios from "axios";
 
 // store the data and then send it back to the api
 export default function VideoUpload() {
@@ -23,17 +25,25 @@ export default function VideoUpload() {
     // Check if the field is filled
     if (title === "" || description === "") {
       // invalid form -> return
+      alert("Please fill the title and description fields");
       return false;
     }
     return true;
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-
     if (isFormValid()) {
-      // This is where we would make an axios request
-      // to our backend to add the user to our database.
+      axios
+        .post(`http://localhost:8080/videos`, {
+          title: title,
+          description: description,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       alert("Video uploaded successfully");
     } else {
       alert("Failed to upload your video :(");
@@ -82,11 +92,7 @@ export default function VideoUpload() {
         </div>
         <div className="video-upload__button-container">
           <p className="video-upload__cancel">Cancel</p>
-          <button
-            disabled={!isFormValid()}
-            className="video-upload__button"
-            type="submit"
-          >
+          <button className="video-upload__button" type="submit">
             <img
               className="video-upload__button-icon"
               src={PublishVideo}

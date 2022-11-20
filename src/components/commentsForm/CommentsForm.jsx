@@ -3,6 +3,7 @@ import Image from "../../assets/images/Mohan-muruge.jpg";
 import commentButton from "../../assets/icons/add_comment.svg";
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 
 // store the data and then send it back to the api
 export default function CommentsForm() {
@@ -27,8 +28,16 @@ export default function CommentsForm() {
     event.preventDefault();
 
     if (isFormValid()) {
-      // This is where we would make an axios request
-      // to our backend to add the user to our database.
+      // axios
+      //   .post(`http://localhost:8080/videos`, {
+      //     comment: comment,
+      //   })
+      //   .then((response) => {
+      //     console.log(response);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
       alert("Comment posted successfully");
     } else {
       alert("Failed to upload your comment :(");
