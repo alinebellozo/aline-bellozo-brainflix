@@ -18,9 +18,11 @@ export default function HomePage() {
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
   const { videoId } = useParams();
 
-  let handleCommentSubmit = () => {
+  const handleCommentSubmit = () => {
+    const id = typeof videoId !== undefined ? mainVid : videoId;
+
     axios
-      .get(`http://localhost:8080/videos/${videoId}`)
+      .get(`http://localhost:8080/videos/${id}`)
       .then((response) => {
         setVideoDetails(response.data);
       })
@@ -132,7 +134,10 @@ export default function HomePage() {
               </h4>
             </div>
 
-            <CommentsForm handleSubmitChange={handleCommentSubmit} />
+            <CommentsForm
+              handleSubmitChange={handleCommentSubmit}
+              mainVid={mainVid}
+            />
 
             {videoDetails.comments?.map((video, index) => (
               <Comments

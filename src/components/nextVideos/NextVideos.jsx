@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function NextVideos(props) {
-  console.log(props.videoDetails);
+  // console.log(props.videoDetails);
   // console.log(props.videos);
 
   const getVideoDetails = (videoDetailsArray, vidId) => {

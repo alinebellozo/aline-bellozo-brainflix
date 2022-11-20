@@ -119,6 +119,10 @@
             display: flex;
             flex-direction: column;
         }
+
+        &__channel-date{
+            width: 16rem;
+        }
         
         &__container-left {
             display: flex;

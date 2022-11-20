@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 // store the data and then send it back to the api
-export default function CommentsForm({ handleSubmitChange }) {
+export default function CommentsForm({ handleSubmitChange, mainVid }) {
   const [comment, setComment] = useState("");
   const { videoId } = useParams();
 
@@ -29,14 +29,18 @@ export default function CommentsForm({ handleSubmitChange }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const id = typeof videoId !== undefined ? mainVid : videoId;
+
     if (isFormValid()) {
       axios
-        .post(`http://localhost:8080/videos/${videoId}/comment`, {
+        .post(`http://localhost:8080/videos/${id}/comment`, {
           comment: comment,
         })
         .then((response) => {
           // console.log(response);
           alert("Comment posted successfully");
+          setComment("");
+          //event.target.value = "";
           handleSubmitChange();
         })
         .catch((error) => {
@@ -68,6 +72,7 @@ export default function CommentsForm({ handleSubmitChange }) {
                 type="text"
                 name="comment"
                 placeholder="Add a new comment"
+                value={comment}
                 onChange={handleChangeComment}
               ></textarea>
               <button className="comments__button" type="submit">
