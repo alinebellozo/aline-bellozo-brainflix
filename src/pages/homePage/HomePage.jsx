@@ -18,6 +18,16 @@ export default function HomePage() {
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
   const { videoId } = useParams();
 
+  let handleCommentSubmit = () => {
+    axios
+      .get(`http://localhost:8080/videos/${videoId}`)
+      .then((response) => {
+        setVideoDetails(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   //getting list of videos
   useEffect(() => {
     axios
@@ -117,10 +127,13 @@ export default function HomePage() {
               <p className="home__video-description">
                 {videoDetails.description}
               </p>
-              <h4 className="home__comments-number">3 comments</h4>
+              <h4 className="home__comments-number">
+                {videoDetails.comments?.length} comments
+              </h4>
             </div>
 
-            <CommentsForm />
+            <CommentsForm handleSubmitChange={handleCommentSubmit} />
+
             {videoDetails.comments?.map((video, index) => (
               <Comments
                 key={video.id}

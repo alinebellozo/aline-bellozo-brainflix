@@ -3,11 +3,13 @@ import Image from "../../assets/images/Mohan-muruge.jpg";
 import commentButton from "../../assets/icons/add_comment.svg";
 import React from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 // store the data and then send it back to the api
-export default function CommentsForm() {
+export default function CommentsForm({ handleSubmitChange }) {
   const [comment, setComment] = useState("");
+  const { videoId } = useParams();
 
   // create a change handler for all inputs
   const handleChangeComment = (event) => {
@@ -28,19 +30,21 @@ export default function CommentsForm() {
     event.preventDefault();
 
     if (isFormValid()) {
-      // axios
-      //   .post(`http://localhost:8080/videos`, {
-      //     comment: comment,
-      //   })
-      //   .then((response) => {
-      //     console.log(response);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
-      alert("Comment posted successfully");
+      axios
+        .post(`http://localhost:8080/videos/${videoId}/comment`, {
+          comment: comment,
+        })
+        .then((response) => {
+          // console.log(response);
+          alert("Comment posted successfully");
+          handleSubmitChange();
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Failed to upload your comment :(");
+        });
     } else {
-      alert("Failed to upload your comment :(");
+      alert("Failed to upload your commenjjjjt :(");
     }
   };
 
@@ -66,11 +70,7 @@ export default function CommentsForm() {
                 placeholder="Add a new comment"
                 onChange={handleChangeComment}
               ></textarea>
-              <button
-                disabled={!isFormValid()}
-                className="comments__button"
-                type="submit"
-              >
+              <button className="comments__button" type="submit">
                 <img
                   className="comments__button-icon"
                   src={commentButton}

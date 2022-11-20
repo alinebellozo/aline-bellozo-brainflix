@@ -1,14 +1,15 @@
 import "./videoUpload.scss";
 import "../homePage/HomePage";
 import React from "react";
-// import SuccessPage from "../successPage/SuccessPage";
 import ThumbnailImage from "../../assets/images/Upload-video-preview.jpg";
 import PublishVideo from "../../assets/icons/publish.svg";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // store the data and then send it back to the api
 export default function VideoUpload() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -44,7 +45,9 @@ export default function VideoUpload() {
         .catch((error) => {
           console.log(error);
         });
+
       alert("Video uploaded successfully");
+      navigate("/");
     } else {
       alert("Failed to upload your video :(");
     }
