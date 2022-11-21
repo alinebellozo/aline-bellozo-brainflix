@@ -57,13 +57,13 @@
 @include medium {
 
     .comments {
+        &__container {
+            padding: 0 2.25rem;
+        }
+
         &__details {
             margin-left: 0;
             width: 97%;
-        }
-
-        &__container {
-            padding: 0 2.25rem;
         }
     }
 }
@@ -75,6 +75,11 @@
         &__container {
             padding-left: 6.25rem;
             padding-right: 0;
+            margin-right: 0;
+        }
+
+        &__details {
+            margin-right: 0;
         }
     }
 }

@@ -44,11 +44,11 @@ export default function CommentsForm({ handleSubmitChange, mainVid }) {
           handleSubmitChange();
         })
         .catch((error) => {
-          console.log(error);
-          alert("Failed to upload your comment :(");
+          // console.log(error);
+          alert("Failed to upload your comment...");
         });
     } else {
-      alert("Failed to upload your commenjjjjt :(");
+      alert("Failed to upload your comment :(");
     }
   };
 

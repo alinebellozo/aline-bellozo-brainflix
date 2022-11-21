@@ -60,7 +60,7 @@
     }
 
     &__comments-number {
-        padding-left: 2.25rem;
+        padding-left: 1rem;
         margin-top: 0;
     }
 }
@@ -102,6 +102,10 @@
 
         &__video-description {
             padding: 1.5rem 2.25rem;
+        }
+
+        &__comments-number {
+            padding-left: 2.25rem;
         }
     }
 }

@@ -40,10 +40,10 @@ export default function VideoUpload() {
           description: description,
         })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
 
       alert("Video uploaded successfully");

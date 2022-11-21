@@ -27,7 +27,7 @@ export default function HomePage() {
         setVideoDetails(response.data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   };
   //getting list of videos
@@ -64,7 +64,7 @@ export default function HomePage() {
           // console.log(response.data);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       //else statement for if the video id is not defined
     } else {

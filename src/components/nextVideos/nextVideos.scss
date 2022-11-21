@@ -20,12 +20,12 @@
         color: $Primary-label-secondary-text;
         margin-top: 0;
         padding-top: 1rem;
+        border-top: 0.0625rem solid #E1E1E1;
     }
 
     &__thumbnail-container {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
     }
 
     &__thumbnail {
@@ -69,6 +69,7 @@
         
         &__title {
             margin-right: 2.25rem;
+            border-top: none;
         }
     }
 }
@@ -81,6 +82,8 @@
         border-left: .0625rem solid $Secondary-divider-form-outline;
         height: 100%;
         justify-content: space-evenly;
+        margin-left: 0;
+        padding-left: 1.5rem;
 
         &__container-right {
             display: flex;
